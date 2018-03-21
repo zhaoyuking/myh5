@@ -5,46 +5,21 @@
 	<meta charset="UTF-8" />
 	<title>实时翻译</title>
 	<style>
-		* {
-			margin:0;
-			padding:0;
-		}
-
-		.content {
-			display:flex;/*弹性盒子*/;
-			justify-content:space-around;/*均分*/
-			align-items:center;
-			width:900px;
-			height:500px;
-			border:1px solid #000;
-			box-shadow:10px 10px 10px #FF0;
-			margin:50px auto;
-		}
-		.ro {
-			flex-direction:row;
-		}
-		.co {
-			flex-direction:column;
-		}
-		.ra {
-			border-radius:10px;
-		}
-		.content textarea {
-			box-sizing:border-box;/*怪异和模型 盒子的尺寸保证为设置的尺寸*/
-			width:400px;
-			height:400px;
-			font-size:24px;
-			padding:5px;
-			resize:none;
-			outline:none;/*聚焦框*/
-		}
+		* {margin:0;padding:0;}
+		.content {display:flex;/*弹性盒子*/;justify-content:space-around;/*均分*/
+			align-items:center;width:900px;height:500px;
+			border:1px solid #000;box-shadow:10px 10px 10px #FF0;
+			margin:50px auto;}
+		.ro {flex-direction:row;}
+		.co {flex-direction:column;}
+		.ra {border-radius:10px;}
+		.content textarea {box-sizing:border-box;/*怪异和模型 盒子的尺寸保证为设置的尺寸*/			width:400px;
+			height:400px;font-size:24px;padding:5px;resize:none;
+			outline:none;/*聚焦框*/}
 		.content textarea.input_box {
-			background-color:#EEE;
-			box-shadow:0 0 4px #00F;
-		}
+			background-color:#EEE;box-shadow:0 0 4px #00F;}
 		.content textarea.result_box {
-			box-shadow:0 0 4px #F00;
-		}
+			box-shadow:0 0 4px #F00;}
 	</style>
 </head>
 <body>
