@@ -29,14 +29,16 @@
             font-weight:bold;
             -webkit-text-stroke: 1px yellow;
         }
-        #f1 {animation:my1 8s infinite;}
-        #f2 {animation:my2 8s infinite;}
+        #f1 {animation:my1 8s infinite;animation-timing-function: linear;}
+        #f2 {animation:my2 8s infinite;animation-timing-function: ease-in-out;}
         @keyframes my1 {
             0% {opacity:0;}
             25% {opacity:100;}
+            50% {opacity:0;}
             100% {opacity:0;}
         }
         @keyframes my2 {
+            0% {opacity:0;}
             50% {opacity:0;}
             75% {opacity:100;}
             100% {opacity:0;}
