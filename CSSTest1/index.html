@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我们不一样</title>
+    <style>
+        * {
+            margin:0;
+            padding: 0;
+        }
+        html {
+            height:100%;
+        }
+        body {
+            background: url("./images/no1.jpg");
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            height:100%;
+        }
+        a {
+            color:white;
+            text-decoration: none;
+        }
+        p {
+            color:white;
+            position: absolute;
+            font-size:40px;
+            font-family: "微软雅黑";
+            font-weight:bold;
+            -webkit-text-stroke: 1px yellow;
+        }
+        #f1 {animation:my1 8s infinite;}
+        #f2 {animation:my2 8s infinite;}
+        @keyframes my1 {
+            0% {opacity:0;}
+            25% {opacity:100;}
+            100% {opacity:0;}
+        }
+        @keyframes my2 {
+            50% {opacity:0;}
+            75% {opacity:100;}
+            100% {opacity:0;}
+        }
+    </style>
+</head>
+<body>
+<div><a href="../index.html">返回目录</a></div>
+<p id="f1">我们不一样，我们有不同的境遇。</p>
+<p id="f2">我们不一样，希望今生还能相依。</p>
+</body>
+</html>
