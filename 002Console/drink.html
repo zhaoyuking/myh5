@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第二杯半价</title>
+    <style>
+        body {
+            font-size: 50px;
+        }
+    </style>
+    <script>
+        function isInterger(num) {
+            return num % 1 === 0;
+        }
+
+        var price = 5;
+        var count = prompt("饮品五元一杯，请输入要点的杯数：", "1");
+        var total;
+        if (isNaN(count)) {
+            document.write("这不是数字。");
+        }
+        else {
+            if (!isInterger(count)) {
+                document.write("这不是个整数。");
+            }
+            else {
+                if (count % 2 == 0) {
+                    total = price * count * 0.75;
+                }
+                else {
+                    total = price * count * 0.75 + price / 4;
+                }
+                document.write("总花费：" + total + "元。");
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
