@@ -8,17 +8,27 @@
             font-size: 50px;
         }
     </style>
+    <script src="js/jQuery_3_3_1_min.js"></script>
     <script>
-        var a = Math.random();
-        if (a > 0.5) {
-            document.write("gogogo");
-        }
-        else {
-            document.write("stop");
-        }
+        $(function () {
+            var a = Math.floor(Math.random() * 4 + 1);
+            var str = String.fromCharCode(a + 64);
+            console.log(a);
+            document.getElementById("demo").innerHTML = str;
+        });
     </script>
 </head>
 <body>
-
+<div id="demo"></div>
 </body>
 </html>
+<script>
+    /*
+    window.onload = function () {
+        var a = Math.floor(Math.random() * 4 + 1);
+        var str = String.fromCharCode(a + 64);
+        console.log(a);
+        document.getElementById("demo").innerHTML = str;
+    };
+    */
+</script>
