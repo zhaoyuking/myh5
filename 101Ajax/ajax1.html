@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ajax 1 - 请求纯文本</title>
+    <style>
+        body{font-size:40px;}
+        #button {width:200px;height:50px;font-size:20px;}
+    </style>
 </head>
 <body>
+<header><a href="../index.html">返回目录</a></header>
+<button id="button">请求纯文本</button>
+<div id="text"></div>
 <div>
     <ul>
         readyState状态码
@@ -23,3 +30,10 @@
 </div>
 </body>
 </html>
+<script>
+    document.getElementById('button').addEventListener("click",loadText);
+    function loadText() {
+        console.log("Hello World!");
+        document.getElementById('text').innerHTML = "Hello World!<br />";
+    }
+</script>
