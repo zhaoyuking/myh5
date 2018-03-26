@@ -4,30 +4,41 @@
     <meta charset="UTF-8">
     <title>Ajax 1 - 请求纯文本</title>
     <style>
-        body{font-size:40px;}
-        #button {width:200px;height:50px;font-size:20px;}
+        body {
+            font-size: 40px;
+        }
+
+        #button {
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
 <header><a href="../index.html">返回目录</a></header>
 <button id="button">请求纯文本</button>
 <script>
-    document.getElementById('button').addEventListener("click",loadText);
+    document.getElementById('button').addEventListener("click", loadText);
+
     function loadText() {
         /*console.log("Hello World!");
         document.getElementById('text').innerHTML = "Hello World!<br />";*/
         var xhr = new XMLHttpRequest();
         //console.log(xhr);
         // open(type,url/file,async)
-        xhr.open('GET','sample.txt',true);
-        console.log("READYSTATE:",xhr.readyState);
-        xhr.onload = function () {
+        xhr.open('GET', 'sample.txt', true);
+        console.log("READYSTATE:", xhr.readyState);
+        /*xhr.onload = function () {
             console.log(this.status);
             document.getElementById('text').innerHTML = this.responseText;
-        };
-        /*xhr.onreadystatechange = function () {
-            console.log("READYSTATE:",xhr.readyState);
         };*/
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && this.status == 200) {
+                console.log("READYSTATE:", xhr.readyState);
+                document.getElementById('text').innerHTML = this.responseText;
+            }
+        };
         // 发送请求
         xhr.send();
     }
