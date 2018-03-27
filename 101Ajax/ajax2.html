@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax 2 - 请求JSON数据</title>
+</head>
+<body>
+<header>
+    <h1>Ajax 2 - 请求JSON数据</h1>
+    <a href="../index.html">返回目录</a>
+</header>
+<section>
+    <button id="button1">请求单个用户</button>
+    <button id="button2">请求多个用户</button>
+    <h2>单个用户</h2>
+    <div id="user"></div>
+    <h2>多个用户</h2>
+    <div id="users"></div>
+</section>
+<footer>
+    奥博电脑
+</footer>
+<script>
+    document.getElementById('button1').addEventListener('click',loadUser);
+    document.getElementById('button2').addEventListener('click',loadUsers);
+    function loadUser() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','user.json',true);
+        xhr.onload = function () {
+            if (this.status == 200) {
+                var user = JSON.parse(this.responseText);
+                var output = '';
+                output +="<ul>";
+                output +="<li>"+user.id+"</li>";
+                output +="<li>"+user.name+"</li>";
+                output +="<li>"+user.email+"</li>";
+                output +="</ul>";
+                document.getElementById('user').innerHTML = output;
+            }
+        };
+        xhr.send();
+    }
+    function loadUsers() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','users.json',true);
+        xhr.onload = function () {
+            if (this.status == 200) {
+                var users = JSON.parse(this.responseText);
+                var output = '';
+                output +="<ul>";
+                for (var i in users) {
+                    output += "<li>" + user[i].id + "</li>";
+                    output += "<li>" + user[i].name + "</li>";
+                    output += "<li>" + user[i].email + "</li>";
+                }
+                output +="</ul>";
+                document.getElementById('users').innerHTML = output;
+            }
+        };
+        xhr.send();
+    }
+</script>
+</body>
+</html>

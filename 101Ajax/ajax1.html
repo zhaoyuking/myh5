@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Ajax 1 - 请求纯文本</title>
     <style>
-        body {
-            font-size: 40px;
+        * {margin:0;padding:0;}
+        body {font-size:50px;width:900px;margin:0 auto;}
+        section {height:600px;
+            overflow: hidden;
         }
-
-        #button {
-            width: 200px;
-            height: 50px;
-            font-size: 20px;
+        div#text {
+            height: 500px;
+            overflow: auto;
+        }
+        button {
+            width:400px;
+            font-size:50px;
         }
     </style>
 </head>
-<body>
-<header><a href="../index.html">返回目录</a></header>
-<button id="button">请求纯文本</button>
-<script>
-    document.getElementById('button').addEventListener("click", loadText);
 
+<body>
+<header>
+    <h1>Ajax 1 - 请求纯文本</h1>
+    <a href="../index.html">返回目录</a>
+</header>
+<section>
+    <button id="button">请求纯文本</button>
+    <div id="text"></div>
+</section>
+<footer>
+    奥博电脑
+</footer>
+<script>
+    document.getElementById('button').addEventListener('click',loadText);
     function loadText() {
-        /*console.log("Hello World!");
-        document.getElementById('text').innerHTML = "Hello World!<br />";*/
         var xhr = new XMLHttpRequest();
-        //console.log(xhr);
-        // open(type,url/file,async)
-        xhr.open('GET', 'sample.txt', true);
-        console.log("READYSTATE:", xhr.readyState);
-        /*xhr.onload = function () {
-            console.log(this.status);
+        xhr.open('GET','sample.txt',true);
+        xhr.onload = function () {
             document.getElementById('text').innerHTML = this.responseText;
-        };*/
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && this.status == 200) {
-                console.log("READYSTATE:", xhr.readyState);
-                document.getElementById('text').innerHTML = this.responseText;
-            } else if(this.status == 404) {
-                document.getElementById('text').innerHTML = "未找到文件";
-            }
-        };
-        // 发送请求
+        }
         xhr.send();
     }
 </script>
-<div id="text"></div>
 </body>
 </html>
