@@ -46,12 +46,13 @@
         xhr.onload = function () {
             if (this.status == 200) {
                 var users = JSON.parse(this.responseText);
+                console.log(users);
                 var output = '';
                 output +="<ul>";
                 for (var i in users) {
-                    output += "<li>" + user[i].id + "</li>";
-                    output += "<li>" + user[i].name + "</li>";
-                    output += "<li>" + user[i].email + "</li>";
+                    output += "<li>" + users[i].id + "</li>";
+                    output += "<li>" + users[i].name + "</li>";
+                    output += "<li>" + users[i].email + "</li>";
                 }
                 output +="</ul>";
                 document.getElementById('users').innerHTML = output;
